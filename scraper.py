@@ -35,7 +35,7 @@ def guardar_imagenes(url, carpeta_destino):
     driver = webdriver.Chrome(service=service)
     driver.get(url)
     
-    # Esperar hasta que las imágenes se hayan cargado
+    # Esperar hasta que las imágenes se hayan cargado (por si se cargan con JavaScript dinámicamente)
     try:
         WebDriverWait(driver, 20).until(  # Aumenta el tiempo de espera si es necesario
             EC.presence_of_all_elements_located((By.TAG_NAME, 'img'))
@@ -49,7 +49,7 @@ def guardar_imagenes(url, carpeta_destino):
     soup = BeautifulSoup(driver.page_source, "html.parser")
     driver.quit()
     
-    # Imprimir el contenido HTML de la página
+    # Imprimir el contenido HTML de la página (opcional, si no lo necesitas, puedes borrar esta línea)
     print(soup.prettify())
     
     # Encontrar todas las etiquetas <img> en el HTML
