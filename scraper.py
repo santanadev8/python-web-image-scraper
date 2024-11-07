@@ -9,20 +9,6 @@ import os
 from urllib.parse import urljoin
 import requests
 
-"""
-    Descarga y guarda todas las imágenes de una página web en una carpeta de destino especificada.
-    Args:
-        url (str): La URL de la página web desde la cual se descargarán las imágenes.
-        carpeta_destino (str): La ruta de la carpeta donde se guardarán las imágenes descargadas.
-    Returns:
-        None
-    Raises:
-        TimeoutException: Si el tiempo de espera para cargar las imágenes se agota.
-    Nota:
-        Este script utiliza Selenium para cargar la página web y BeautifulSoup para analizar el contenido HTML.
-        Asegúrate de tener el controlador de Chrome (chromedriver) en la ruta especificada y las bibliotecas necesarias instaladas.
-    """
-
 # Función para capturar y guardar imágenes de una URL específica
 def guardar_imagenes(url, carpeta_destino):
 
